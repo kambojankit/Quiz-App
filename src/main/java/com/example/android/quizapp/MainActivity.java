@@ -49,32 +49,53 @@ public class MainActivity extends AppCompatActivity {
                     correctAnswers += 1;
                 break;
             case R.id.bose:
-                if(checked)
-                    correctAnswers -= 1;
+                if(checked){
+                    if(correctAnswers == 0){
+                        correctAnswers += 0;
+                    }
+                    else
+                        correctAnswers -= 1;
+                }
                     break;
             case R.id.Nehru:
                 if(checked)
                     correctAnswers += 1;
                 break;
             case R.id.rajendra:
-                if(checked)
-                    correctAnswers -= 1;
+                if(checked){
+                    if(correctAnswers == 0){
+                        correctAnswers += 0;
+                    }
+                    else
+                        correctAnswers -= 1;
+                }
                     break;
             case R.id.kalam:
                 if (checked)
                     correctAnswers += 1;
                 break;
             case R.id.sarabhai:
-                if (checked)
-                    correctAnswers -= 1;
+                if(checked){
+                    if(correctAnswers == 0){
+                        correctAnswers += 0;
+                    }
+                    else
+                        correctAnswers -= 1;
+                }
                 break;
             case R.id.patel:
                 if (checked)
                     correctAnswers += 1;
                 break;
             case R.id.lala:
-                if (checked)
-                    correctAnswers -= 1;
+                if(checked){
+                    if(correctAnswers == 0){
+                        correctAnswers += 0;
+                    }
+                    else
+                        correctAnswers -= 1;
+                }
+                break;
 
         }
     }

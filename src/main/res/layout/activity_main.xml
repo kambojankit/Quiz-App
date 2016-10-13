@@ -1,13 +1,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:orientation="vertical"
-                tools:context=".MainActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -43,14 +43,14 @@
                     android:onClick="correctAnswer"/>
         </RadioGroup>
         <TextView
-                  style="@style/HeightWidth"
-                  android:background="#E1BEE7"
-                  android:text="@string/ques_two"/>
+                style="@style/HeightWidth"
+                android:background="#E1BEE7"
+                android:text="@string/ques_two"/>
         <CheckBox
-                  android:id="@+id/Satyagraha"
-                  style="@style/HeightWidth"
-                  android:background="#E1BEE7"
-                  android:text="@string/satyagrah"/>
+                android:id="@+id/Satyagraha"
+                style="@style/HeightWidth"
+                android:background="#E1BEE7"
+                android:text="@string/satyagrah"/>
         <CheckBox
                 android:id="@+id/Dandi"
                 style="@style/HeightWidth"
@@ -116,51 +116,51 @@
                     android:id="@+id/patel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sardar Vallabhbhai Patel"
+                    android:text="@string/patel"
                     android:onClick="correctAnswer"/>
             <RadioButton
                     android:id="@+id/lala"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lala Lajpat Rai"
+                    android:text="@string/lala"
                     android:onClick="correctAnswer"/>
         </RadioGroup>
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FFEE58"
                 android:layout_marginBottom="2dp"
-                android:text="6. In which year India got independence?"/>
+                android:text="@string/ques_six"/>
         <EditText
                 android:id="@+id/independence_year"
                 style="@style/HeightWidth"
                 android:layout_height="wrap_content"
                 android:background="#FFEE58"
                 android:layout_marginBottom="10dp"
-                android:hint="Enter year here"
+                android:hint="@string/year"
                 android:inputType="number"/>
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
-                android:text="7. Rani Lakshmi Bai is also known by names?"/>
+                android:text="@string/ques_seven"/>
         <CheckBox
                 android:id="@+id/jhansi_ki_rani"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
-                android:text="Jhansi Ki Rani"/>
+                android:text="@string/jhansi"/>
         <CheckBox
                 android:id="@+id/mannu"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
-                android:text="Mannu"/>
+                android:text="@string/mannu"/>
         <CheckBox
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
                 android:layout_marginBottom="10dp"
-                android:text="Iron Lady"/>
+                android:text="@string/iron_lady"/>
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FF7043"
-                android:text="8. Identify the image and write his name"/>
+                android:text="@string/ques_eight"/>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,12 +170,12 @@
         <EditText
                 android:id="@+id/swami_vivekananda"
                 android:background="#FF7043"
-                android:hint="Enter name here"
+                android:hint="@string/name_hint"
                 style="@style/HeightWidth"/>
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SUBMIT"
+                android:text="@string/button"
                 android:layout_gravity="center_horizontal"
                 android:onClick="checkResults"/>
     </LinearLayout>
