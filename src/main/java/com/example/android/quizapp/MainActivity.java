@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int correctAnswers = 0;
-    int inCorrectAnswers = 0;
+    EditText year;
+    //int inCorrectAnswers = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clickEditText(View view){
+        year = (EditText) findViewById(R.id.independence_year);
+        String independenceYear = String.valueOf(year.getText());
+        if (independenceYear.equals("1947")) {
+            correctAnswers += 1;
+        } else {
+           // if (independenceYear != "1947")
+                //correctAnswers -= 1;
+            if(correctAnswers == 0){
+                correctAnswers += 0;
+            }
+            else
+                correctAnswers -= 1;
+        }
+
     }
 
     public void correctAnswer(View view){
@@ -102,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void checkResults(View v){
+
+
         Toast.makeText(getApplicationContext(),"Number of Correct Answers " +correctAnswers , Toast.LENGTH_LONG).show();
         //Toast.makeText(getApplicationContext(),"Number of InCorrect Answers " +inCorrectAnswers , Toast.LENGTH_LONG).show();
 
