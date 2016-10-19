@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     int correctAnswers = 0;
     EditText year;
+    CheckBox Satya, Dandi, Swadeshi, Jhansi,Mannu;
+    String s = "1947";
     //int inCorrectAnswers = 0;
 
     @Override
@@ -44,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickEditText(View view){
         year = (EditText) findViewById(R.id.independence_year);
-        String independenceYear = String.valueOf(year.getText());
-        if (independenceYear.equals("1947")) {
+        //String independenceYear = String.valueOf(year.getText());
+       // if (independenceYear.equals("1947")) {
+        if (year.getText().toString().equals(s)){
             correctAnswers += 1;
         } else {
            // if (independenceYear != "1947")
@@ -56,8 +60,53 @@ public class MainActivity extends AppCompatActivity {
             else
                 correctAnswers -= 1;
         }
+        EditText swami = (EditText) findViewById(R.id.swami_vivekananda);
+        if (swami.getText().toString().equals("swami")){
+            correctAnswers += 1;
+        }
+        else{
+            if(correctAnswers == 0){
+                correctAnswers += 0;
+            }
+            else
+                correctAnswers -= 1;
+        }
 
     }
+
+    public void onCheckboxClicked(View v) {
+        Satya = (CheckBox) findViewById(R.id.Satyagraha);
+        Dandi = (CheckBox) findViewById(R.id.Dandi);
+        Swadeshi = (CheckBox) findViewById(R.id.Swadeshi);
+
+        if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked()) {
+            correctAnswers += 1;
+        } else {
+            if (correctAnswers == 0) {
+                correctAnswers += 0;
+            } else
+                correctAnswers -= 1;
+        }
+    }
+
+        public void onCheckboxSeven(View v){
+            Jhansi = (CheckBox) findViewById(R.id.jhansi_ki_rani);
+            Mannu = (CheckBox) findViewById(R.id.mannu);
+
+            if (Jhansi.isChecked() && Mannu.isChecked()){
+            correctAnswers += 1;
+        }
+        else{
+            if(correctAnswers == 0){
+                correctAnswers += 0;
+            }
+            else
+                correctAnswers -= 1;
+        }
+
+    }
+
+
 
     public void correctAnswer(View view){
         boolean checked = ((RadioButton)view).isChecked();

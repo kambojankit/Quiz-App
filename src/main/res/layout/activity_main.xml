@@ -50,17 +50,20 @@
                 android:id="@+id/Satyagraha"
                 style="@style/HeightWidth"
                 android:background="#E1BEE7"
+                android:onClick="onCheckboxClicked"
                 android:text="@string/satyagrah"/>
         <CheckBox
                 android:id="@+id/Dandi"
                 style="@style/HeightWidth"
                 android:background="#E1BEE7"
+                android:onClick="onCheckboxClicked"
                 android:text="@string/dandi"/>
         <CheckBox
                 android:id="@+id/Swadeshi"
                 style="@style/HeightWidth"
                 android:text="@string/swadeshi"
                 android:background="#E1BEE7"
+                android:onClick="onCheckboxClicked"
                 android:layout_marginBottom="10dp"/>
         <TextView
                 style="@style/HeightWidth"
@@ -147,16 +150,19 @@
                 android:id="@+id/jhansi_ki_rani"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
+                android:onClick="onCheckboxSeven"
                 android:text="@string/jhansi"/>
         <CheckBox
                 android:id="@+id/mannu"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
+                android:onClick="onCheckboxSeven"
                 android:text="@string/mannu"/>
         <CheckBox
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
                 android:layout_marginBottom="10dp"
+                android:onClick="onCheckboxSeven"
                 android:text="@string/iron_lady"/>
         <TextView
                 style="@style/HeightWidth"
@@ -172,6 +178,7 @@
                 android:id="@+id/swami_vivekananda"
                 android:background="#FF7043"
                 android:hint="@string/name_hint"
+                android:onClick="clickEditText"
                 style="@style/HeightWidth"/>
         <Button
                 android:layout_width="wrap_content"
