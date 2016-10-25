@@ -150,20 +150,24 @@
                 android:id="@+id/jhansi_ki_rani"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
-                android:onClick="onCheckboxSeven"
-                android:text="@string/jhansi"/>
+                android:text="@string/jhansi"
+                android:onClick="onCheckboxSeven" />
+
         <CheckBox
                 android:id="@+id/mannu"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
-                android:onClick="onCheckboxSeven"
-                android:text="@string/mannu"/>
+                android:text="@string/mannu"
+                android:onClick="onCheckboxSeven" />
+
         <CheckBox
+                android:id="@+id/iron_lady"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
                 android:layout_marginBottom="10dp"
-                android:onClick="onCheckboxSeven"
-                android:text="@string/iron_lady"/>
+                android:text="@string/iron_lady"
+                android:onClick="onCheckboxSeven"/>
+
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FF7043"

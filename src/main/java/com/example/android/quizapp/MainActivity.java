@@ -13,7 +13,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     int correctAnswers = 0;
     EditText year;
-    CheckBox Satya, Dandi, Swadeshi, Jhansi,Mannu;
+    CheckBox Satya, Dandi, Swadeshi, Jhansi, Mannu, IronLady;
+    //    CheckBox Jhansi = (CheckBox) findViewById(R.id.jhansi_ki_rani);
+//    CheckBox Mannu = (CheckBox) findViewById(R.id.mannu);
     String s = "1947";
     //int inCorrectAnswers = 0;
 
@@ -45,30 +47,27 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void clickEditText(View view){
+    public void clickEditText(View view) {
         year = (EditText) findViewById(R.id.independence_year);
         //String independenceYear = String.valueOf(year.getText());
-       // if (independenceYear.equals("1947")) {
-        if (year.getText().toString().equals(s)){
+        // if (independenceYear.equals("1947")) {
+        if (year.getText().toString().equals(s)) {
             correctAnswers += 1;
         } else {
-           // if (independenceYear != "1947")
-                //correctAnswers -= 1;
-            if(correctAnswers == 0){
+            // if (independenceYear != "1947")
+            //correctAnswers -= 1;
+            if (correctAnswers == 0) {
                 correctAnswers += 0;
-            }
-            else
+            } else
                 correctAnswers -= 1;
         }
         EditText swami = (EditText) findViewById(R.id.swami_vivekananda);
-        if (swami.getText().toString().equals("swami")){
+        if (swami.getText().toString().equals("swami")) {
             correctAnswers += 1;
-        }
-        else{
-            if(correctAnswers == 0){
+        } else {
+            if (correctAnswers == 0) {
                 correctAnswers += 0;
-            }
-            else
+            } else
                 correctAnswers -= 1;
         }
 
@@ -82,29 +81,45 @@ public class MainActivity extends AppCompatActivity {
         if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked()) {
             correctAnswers += 1;
         } else {
-            if (correctAnswers == 0) {
-                correctAnswers += 0;
-            } else
-                correctAnswers -= 1;
-        }
-    }
+            if (Satya.isChecked()== false || Dandi.isChecked() == false || Swadeshi.isChecked() == false) {
+                if(correctAnswers == 0)
+                    correctAnswers += 0;
+                 else
+                   correctAnswers -= 1;
 
-        public void onCheckboxSeven(View v){
-            Jhansi = (CheckBox) findViewById(R.id.jhansi_ki_rani);
-            Mannu = (CheckBox) findViewById(R.id.mannu);
-
-            if (Jhansi.isChecked() && Mannu.isChecked()){
-            correctAnswers += 1;
-        }
-        else{
-            if(correctAnswers == 0){
-                correctAnswers += 0;
             }
-            else
-                correctAnswers -= 1;
+//            if (correctAnswers == 0) {
+//                correctAnswers += 0;
+//            } else
+//                correctAnswers -= 1;
         }
-
     }
+
+    public void onCheckboxSeven(View v) {
+        Jhansi = (CheckBox) findViewById(R.id.jhansi_ki_rani);
+        Mannu = (CheckBox) findViewById(R.id.mannu);
+        IronLady = (CheckBox) findViewById(R.id.iron_lady);
+
+
+        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked()== false) {
+            correctAnswers += 1;
+        } else {
+            if (Jhansi.isChecked() || Mannu.isChecked() || IronLady.isChecked()) {
+                if (correctAnswers == 0) {
+                    correctAnswers += 0;
+                } else
+                    correctAnswers -= 1;
+            }
+
+//            if(correctAnswers == 0){
+//               correctAnswers += 0;
+//            }
+//            else
+//                correctAnswers -= 1;
+
+
+        }
+ }
 
 
 
