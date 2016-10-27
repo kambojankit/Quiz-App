@@ -122,6 +122,25 @@ public class MainActivity extends AppCompatActivity {
  }
 
 
+    //Change Proposed By Ankit
+    public void checkAnswer7(View v) {
+        // assuming current answer to be incorrect by default.
+        boolean isAnswerCorrect = false;
+
+
+        if (Jhansi.isChecked() && Mannu.isChecked()) {  // assuming if jhansi and mannu both are checked then answer correct
+            isAnswerCorrect = true;
+        } else {
+            isAnswerCorrect = false;
+        }
+        
+        if(isAnswerCorrect){
+             correctAnswers++;   // correct answers will be updated only if this answer is correct.
+        }
+    }
+
+
+    
 
     public void correctAnswer(View view){
         boolean checked = ((RadioButton)view).isChecked();
