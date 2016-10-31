@@ -85,13 +85,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/nehru"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerThree"/>
             <RadioButton
                     android:id="@+id/rajendra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/rajendra"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerThree"/>
         </RadioGroup>
         <TextView
                 style="@style/HeightWidth"
@@ -106,13 +106,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/kalam"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerFour"/>
             <RadioButton
                     android:id="@+id/sarabhai"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sarabhai"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerFour"/>
         </RadioGroup>
         <TextView
                 style="@style/HeightWidth"
@@ -127,13 +127,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/patel"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerFive"/>
             <RadioButton
                     android:id="@+id/lala"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/lala"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerFive"/>
         </RadioGroup>
         <TextView
                 style="@style/HeightWidth"
@@ -147,7 +147,7 @@
                 android:background="#FFEE58"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/year"
-                android:onClick="clickEditText"
+                android:onClick="answerSix"
                 android:inputType="number"/>
         <TextView
                 style="@style/HeightWidth"
@@ -158,14 +158,14 @@
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
                 android:text="@string/jhansi"
-                android:onClick="onCheckboxSeven" />
+                android:onClick="answerSeven" />
 
         <CheckBox
                 android:id="@+id/mannu"
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
                 android:text="@string/mannu"
-                android:onClick="onCheckboxSeven" />
+                android:onClick="answerSeven" />
 
         <CheckBox
                 android:id="@+id/iron_lady"
@@ -173,7 +173,7 @@
                 android:background="#FFB74D"
                 android:layout_marginBottom="10dp"
                 android:text="@string/iron_lady"
-                android:onClick="onCheckboxSeven"/>
+                android:onClick="answerSeven"/>
 
         <TextView
                 style="@style/HeightWidth"
@@ -189,7 +189,7 @@
                 android:id="@+id/swami_vivekananda"
                 android:background="#FF7043"
                 android:hint="@string/name_hint"
-                android:onClick="clickEditText"
+                android:onClick="answerEight"
                 style="@style/HeightWidth"/>
         <Button
                 android:layout_width="wrap_content"

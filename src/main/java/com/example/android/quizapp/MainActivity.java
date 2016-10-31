@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     int answerSeven = 0,correctAnswers = 0;
     EditText year, swami;
     CheckBox Satya, Dandi, Swadeshi, Jhansi, Mannu, IronLady;
-    RadioButton Gandhi,bose;
+    RadioButton Gandhi,bose, Nehru, kalam, patel;
     String s = "1947";
     //int inCorrectAnswers = 0;
 
@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Gandhi = (RadioButton) findViewById(R.id.Mahatama_Gandhi);
         bose = (RadioButton) findViewById(R.id.bose);
+        Nehru = (RadioButton) findViewById(R.id.Nehru);
+        kalam = (RadioButton) findViewById(R.id.kalam);
+        patel = (RadioButton) findViewById(R.id.patel);
         year = (EditText) findViewById(R.id.independence_year);
         swami = (EditText) findViewById(R.id.swami_vivekananda);
         Satya = (CheckBox) findViewById(R.id.Satyagraha);
@@ -90,6 +93,89 @@ public class MainActivity extends AppCompatActivity {
             correctAnswers += 0;
         else
             correctAnswers--;
+    }
+
+    public void answerThree(View view){
+        boolean isAnswerCorrect = false;
+
+        if (Nehru.isChecked())
+            isAnswerCorrect = true;
+        else
+            isAnswerCorrect = false;
+
+        if (isAnswerCorrect)
+            correctAnswers++;
+        else
+        if(correctAnswers == 0)
+            correctAnswers += 0;
+        else
+            correctAnswers--;
+    }
+
+    public void answerFour(View view){
+        boolean isAnswerCorrect = false;
+
+        if (kalam.isChecked())
+            isAnswerCorrect = true;
+        else
+            isAnswerCorrect = false;
+
+        if (isAnswerCorrect)
+            correctAnswers++;
+        else
+        if(correctAnswers == 0)
+            correctAnswers += 0;
+        else
+            correctAnswers--;
+    }
+
+    public void answerFive(View view){
+        boolean isAnswerCorrect = false;
+
+        if (patel.isChecked())
+            isAnswerCorrect = true;
+        else
+            isAnswerCorrect = false;
+
+        if (isAnswerCorrect)
+            correctAnswers++;
+        else
+        if(correctAnswers == 0)
+            correctAnswers += 0;
+        else
+            correctAnswers--;
+    }
+
+    public void answerSix(View view){
+        boolean isAnswerCorrect = false;
+        year = (EditText) findViewById(R.id.independence_year);
+        String indYear = String.valueOf(year.getText());
+        if (indYear.equals("1947")){
+            isAnswerCorrect = true;
+        }
+        if (isAnswerCorrect)
+            correctAnswers++;
+    }
+
+    public void answerSeven(View view){
+        boolean isAnswerCorrect = false;
+        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked() == false){
+            isAnswerCorrect = true;
+        }
+        else
+            isAnswerCorrect = false;
+
+        if (isAnswerCorrect)
+            correctAnswers++;
+        else
+        if(correctAnswers == 0)
+            correctAnswers += 0;
+        else
+            correctAnswers--;
+    }
+
+    public void answerEight(View view){
+
     }
 
 //    public void clickEditText(View view) {
