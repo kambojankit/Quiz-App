@@ -34,13 +34,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/gandhi"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerOne"/>
+                    <!-- android:onClick="correctAnswer"-->
             <RadioButton
                     android:id="@+id/bose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/bose"
-                    android:onClick="correctAnswer"/>
+                    android:onClick="answerOne"/>
+                    <!--android:onClick="correctAnswer"-->
         </RadioGroup>
         <TextView
                 style="@style/HeightWidth"
@@ -50,21 +52,26 @@
                 android:id="@+id/Satyagraha"
                 style="@style/HeightWidth"
                 android:background="#E1BEE7"
-                android:onClick="onCheckboxClicked"
-                android:text="@string/satyagrah"/>
+                android:text="@string/satyagrah"
+                android:onClick="answerTwo"/>
+             <!--   android:onClick="onCheckboxClicked" -->
+
         <CheckBox
                 android:id="@+id/Dandi"
                 style="@style/HeightWidth"
                 android:background="#E1BEE7"
-                android:onClick="onCheckboxClicked"
+                android:onClick="answerTwo"
                 android:text="@string/dandi"/>
+           <!-- android:onClick="onCheckboxClicked"-->
         <CheckBox
                 android:id="@+id/Swadeshi"
                 style="@style/HeightWidth"
                 android:text="@string/swadeshi"
                 android:background="#E1BEE7"
-                android:onClick="onCheckboxClicked"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:onClick="answerTwo"/>
+              <!--  android:onClick="onCheckboxClicked"
+                -->
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FFCDD2"
