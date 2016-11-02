@@ -18,8 +18,15 @@
     <string name="kalam">Dr. A.P.J. Abdul Kalam</string>
     <string name="sarabhai">Dr. Vikram Sarabhai</string>
     <string name="ques_five">5. Who is also known as \'Iron Man\' of India?</string>
-    <string name="ques_six"></string>
-
-
-
+    <string name="ques_six">6. In which year India got independence?</string>
+    <string name="patel">Sardar Vallabhbhai Patel</string>
+    <string name="lala">Lala Lajpat Rai</string>
+    <string name="year">Enter year here</string>
+    <string name="ques_seven">7. Rani Lakshmi Bai is also known by names?</string>
+    <string name="jhansi">Jhansi Ki Rani</string>
+    <string name="mannu">Mannu</string>
+    <string name="iron_lady">Iron Lady</string>
+    <string name="ques_eight">8. Identify the image and write his name</string>
+    <string name="name_hint">Enter name here</string>
+    <string name="button">SUBMIT</string>
 </resources>
