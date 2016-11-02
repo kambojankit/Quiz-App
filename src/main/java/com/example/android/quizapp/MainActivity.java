@@ -68,6 +68,28 @@ public class MainActivity extends AppCompatActivity {
         else
             isAnswerCorrect = false;
 
+        /**
+            SEE:  Firstly the logic you added in else block is not required. you can use something like below
+
+             if (isAnswerCorrect){
+                correctAnswers++;
+             }
+             else{
+                correctAnswers--;
+             }
+
+         But this correctAnswers is the root cause of all the issues.
+
+         Every time you click on something in your App Activity, it leads to any of the answers checking methods to be called.
+
+         i.e either if you clicked on question 1's correct answer 'Mahatma Gandhi' twice, that will lead to correctAnswers being incremented twice
+
+         which is incorrect.
+
+         Hence look at some other way of achieving the same.
+
+         */
+
         if (isAnswerCorrect)
             correctAnswers++;
         else

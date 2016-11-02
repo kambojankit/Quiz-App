@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/gandhi"
                     android:onClick="answerOne"/>
-                    <!-- android:onClick="correctAnswer"-->
+                     android:onClick="correctAnswer"
             <RadioButton
                     android:id="@+id/bose"
                     android:layout_width="wrap_content"
