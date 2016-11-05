@@ -147,8 +147,13 @@
                 android:background="#FFEE58"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/year"
-                android:onClick="answerSix"
-                android:inputType="number"/>
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:inputType="number">
+                <requestFocus/>
+        </EditText>
+                <!--android:onClick="answerSix" -->
+
         <TextView
                 style="@style/HeightWidth"
                 android:background="#FFB74D"
