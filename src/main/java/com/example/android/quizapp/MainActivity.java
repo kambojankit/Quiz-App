@@ -13,6 +13,21 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+      These int variables below, should be used as flags/booleans. They should just hold values of 0 or 1.
+      they should not be incremented, or decremented in the logic. 
+      
+      This is because, these variables hold the state of the answer. They specifiy if answer is correct or not. example, 
+      if answerOne is correct, its value should be 1, else its 0. similar for other ones. 
+      
+      This will help you resolve the edit text issue. What would have been happening probable is, everytime you touch the 
+      edit text, it would be doing calls to the onTouchListener, which further calls your answerSix() method.
+      
+      This will lead to the answerSix variable to be incremented multiple times, leading to incorrect answer. 
+      But if these int variables are used as booleans, then this issue wont arrive. 
+      
+    */
     int correctAnswers = 0,answerOne = 0, answerTwo = 0, answerThree = 0, answerFour = 0,
     answerFive = 0, answerSix = 0, answerSeven = 0, answerEight = 0;
     EditText year, swami;
