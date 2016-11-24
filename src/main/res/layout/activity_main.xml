@@ -140,6 +140,7 @@
                 android:background="#FFEE58"
                 android:layout_marginBottom="2dp"
                 android:text="@string/ques_six"/>
+
         <EditText
                 android:id="@+id/independence_year"
                 style="@style/HeightWidth"
@@ -147,10 +148,8 @@
                 android:background="#FFEE58"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/year"
-                android:focusableInTouchMode="true"
-                android:focusable="true"
-                android:inputType="number">
-                <requestFocus/>
+                android:onClick="answerSix">
+               <!--<requestFocus/> -->
         </EditText>
                 <!--android:onClick="answerSix" -->
 

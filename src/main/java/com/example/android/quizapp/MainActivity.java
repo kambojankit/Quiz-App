@@ -2,6 +2,7 @@ package com.example.android.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+
     int correctAnswers = 0,answerOne = 0, answerTwo = 0, answerThree = 0, answerFour = 0,
     answerFive = 0, answerSix = 0, answerSeven = 0, answerEight = 0;
     EditText year, swami;
@@ -38,21 +40,6 @@ public class MainActivity extends AppCompatActivity {
         Jhansi = (CheckBox) findViewById(R.id.jhansi_ki_rani);
         Mannu = (CheckBox) findViewById(R.id.mannu);
         IronLady = (CheckBox) findViewById(R.id.iron_lady);
-
-
-        year = (EditText) findViewById(R.id.independence_year);
-        year.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-               // if (event.getAction()==MotionEvent.ACTION_UP){
-                    answerSix();
-                    return true;
-
-                //return false;
-            }
-        });
-
-
     }
 
 
@@ -85,13 +72,16 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = true;
 
         if (isAnswerCorrect)
-            answerOne++;
+           // answerOne++;
+            answerOne = 1;
             //correctAnswers++;
         else
             if(answerOne == 0)
                 answerOne += 0;
             else
-                answerOne--;
+                answerOne = 0;
+               // answerOne--;
+
 //           if(correctAnswers == 0)
 //               correctAnswers += 0;
 //           else
@@ -109,10 +99,12 @@ public class MainActivity extends AppCompatActivity {
 //            isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            answerTwo++;
+            answerTwo = 1;
+            //answerTwo++;
         else
-            if (answerTwo > 0)
-                answerTwo--;
+            answerTwo = 0;
+//            if (answerTwo > 0)
+//                answerTwo--;
             //correctAnswers++;
 //        else
 //        if(correctAnswers == 0)
@@ -128,12 +120,14 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = true;
 
         if (isAnswerCorrect)
-            answerThree++;
+            answerThree = 1;
+            //answerThree++;
         else
-        if(answerThree == 0)
-            answerThree += 0;
-        else
-            answerThree--;
+            answerThree = 0;
+//        if(answerThree == 0)
+//            answerThree += 0;
+//        else
+//            answerThree--;
 //        if(correctAnswers == 0)
 //            correctAnswers += 0;
 //        else
@@ -149,12 +143,14 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            answerFour++;
+            answerFour = 1;
+           // answerFour++;
         else
-        if(answerFour == 0)
-            answerFour += 0;
-        else
-            answerFour--;
+            answerFour = 0;
+//        if(answerFour == 0)
+//            answerFour += 0;
+//        else
+//            answerFour--;
 //        if(correctAnswers == 0)
 //            correctAnswers += 0;
 //        else
@@ -170,12 +166,14 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            answerFive++;
+            answerFive = 1;
+            //answerFive++;
         else
-        if(answerFive == 0)
-            answerFive += 0;
-        else
-            answerFive--;
+            answerFive = 0;
+//        if(answerFive == 0)
+//            answerFive += 0;
+//        else
+//            answerFive--;
 //        if(correctAnswers == 0)
 //            correctAnswers += 0;
 //        else
@@ -200,39 +198,51 @@ public class MainActivity extends AppCompatActivity {
 //                return false;
 //            }
 //        });
-    public void answerSix(){
-  //      year = (EditText) findViewById(R.id.independence_year);
+    public void answerSix(View view){
+//        year = (EditText) findViewById(R.id.independence_year);
         boolean isAnswerCorrect = false;
         //String indYear = String.valueOf(year.getText());
         String indYear = year.getText().toString();
+        Log.w("DATA_SIX", indYear);
         if (indYear.equals("1947")){
             isAnswerCorrect = true;
         }
         if (isAnswerCorrect)
-            answerSix++;
+            answerSix = 1;
+        else {
+            answerSix = 0;
+        }
+            //answerSix++;
    }
 
-    public void answerSeven(View view){
+    public void answerSeven(View view) {
         boolean isAnswerCorrect = false;
-        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked() == false){
+        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked() == false) {
             isAnswerCorrect = true;
-        }
-        else
+        } else
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            answerSeven++;
+            answerSeven = 1;
+            //answerSeven++;
         else
-        if (answerSeven > 0)
-            answerSeven--;
-//        if(correctAnswers == 0)
-//            correctAnswers += 0;
-//        else
-//            correctAnswers--;
+            answerSeven = 0;
     }
 
-    public void answerEight(View view){
 
+    public void answerEight(View view){
+        boolean isAnswerCorrect = false;
+        String name = swami.getText().toString();
+        Log.e("DATA_EGHT", name);
+        if (name.equalsIgnoreCase("swami")) {
+            isAnswerCorrect = true;
+        }
+
+        if (isAnswerCorrect){
+            answerEight = 1;
+        }else {
+            answerEight = 0;
+        }
     }
 
 //    public void clickEditText(View view) {
@@ -376,7 +386,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkResults(View v){
        // int finalAnswer = answerSeven + correctAnswers;
-        int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven;
+        int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven + answerEight;
 
         Toast.makeText(getApplicationContext(),"Number of Correct Answers " +finalAnswer , Toast.LENGTH_LONG).show();
        // Toast.makeText(getApplicationContext(),"Number of Correct Answers " +correctAnswers , Toast.LENGTH_LONG).show();
