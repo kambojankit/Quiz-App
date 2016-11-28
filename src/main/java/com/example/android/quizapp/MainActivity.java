@@ -15,13 +15,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    int correctAnswers = 0,answerOne = 0, answerTwo = 0, answerThree = 0, answerFour = 0,
+    byte correctAnswers = 0,answerOne = 0, answerTwo = 0, answerThree = 0, answerFour = 0,
     answerFive = 0, answerSix = 0, answerSeven = 0, answerEight = 0;
     EditText year, swami;
     CheckBox Satya, Dandi, Swadeshi, Jhansi, Mannu, IronLady;
     RadioButton Gandhi,bose, Nehru, kalam, patel;
     String s = "1947";
-    //int inCorrectAnswers = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,20 +72,13 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = true;
 
         if (isAnswerCorrect)
-           // answerOne++;
             answerOne = 1;
-            //correctAnswers++;
+
         else
             if(answerOne == 0)
                 answerOne += 0;
             else
                 answerOne = 0;
-               // answerOne--;
-
-//           if(correctAnswers == 0)
-//               correctAnswers += 0;
-//           else
-//            correctAnswers--;
     }
 
     public void answerTwo(View view){
@@ -95,22 +88,10 @@ public class MainActivity extends AppCompatActivity {
         if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked())
             isAnswerCorrect = true;
 
-//        else
-//            isAnswerCorrect = false;
-
         if (isAnswerCorrect)
             answerTwo = 1;
-            //answerTwo++;
         else
             answerTwo = 0;
-//            if (answerTwo > 0)
-//                answerTwo--;
-            //correctAnswers++;
-//        else
-//        if(correctAnswers == 0)
-//            correctAnswers += 0;
-//        else
-//            correctAnswers--;
     }
 
     public void answerThree(View view){
@@ -121,17 +102,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (isAnswerCorrect)
             answerThree = 1;
-            //answerThree++;
         else
             answerThree = 0;
-//        if(answerThree == 0)
-//            answerThree += 0;
-//        else
-//            answerThree--;
-//        if(correctAnswers == 0)
-//            correctAnswers += 0;
-//        else
-//            correctAnswers--;
+
     }
 
     public void answerFour(View view){
@@ -144,17 +117,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (isAnswerCorrect)
             answerFour = 1;
-           // answerFour++;
         else
             answerFour = 0;
-//        if(answerFour == 0)
-//            answerFour += 0;
-//        else
-//            answerFour--;
-//        if(correctAnswers == 0)
-//            correctAnswers += 0;
-//        else
-//            correctAnswers--;
     }
 
     public void answerFive(View view){
@@ -167,43 +131,14 @@ public class MainActivity extends AppCompatActivity {
 
         if (isAnswerCorrect)
             answerFive = 1;
-            //answerFive++;
         else
             answerFive = 0;
-//        if(answerFive == 0)
-//            answerFive += 0;
-//        else
-//            answerFive--;
-//        if(correctAnswers == 0)
-//            correctAnswers += 0;
-//        else
-//            correctAnswers--;
     }
 
-  //  public void answerSix(View view){
-       // boolean isAnswerCorrect = false;
-//        year = (EditText) findViewById(R.id.independence_year);
-//        year.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                boolean isAnswerCorrect = false;
-//                String indYear = year.getText().toString();
-//                if (indYear.equals("1947")){
-//                    isAnswerCorrect = true;
-//        }
-//                if (isAnswerCorrect) {
-//                    answerSix++;
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
     public void answerSix(View view){
-//        year = (EditText) findViewById(R.id.independence_year);
         boolean isAnswerCorrect = false;
-        //String indYear = String.valueOf(year.getText());
         String indYear = year.getText().toString();
-        Log.w("DATA_SIX", indYear);
+        Log.e("DATA_SIX", indYear);
         if (indYear.equals("1947")){
             isAnswerCorrect = true;
         }
@@ -212,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             answerSix = 0;
         }
-            //answerSix++;
    }
 
     public void answerSeven(View view) {
@@ -234,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isAnswerCorrect = false;
         String name = swami.getText().toString();
         Log.e("DATA_EGHT", name);
-        if (name.equalsIgnoreCase("swami")) {
+        if (name.equalsIgnoreCase("Swami Vivekanand")) {
             isAnswerCorrect = true;
         }
 
@@ -245,84 +179,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public void clickEditText(View view) {
-//
-//        //String independenceYear = String.valueOf(year.getText());
-//        // if (independenceYear.equals("1947")) {
-//        if (year.getText().toString().equals(s)) {
-//            correctAnswers += 1;
-//        } else {
-//            // if (independenceYear != "1947")
-//            //correctAnswers -= 1;
-//            if (correctAnswers == 0) {
-//                correctAnswers += 0;
-//            } else
-//                correctAnswers -= 1;
-//        }
-//
-//        if (swami.getText().toString().equals("swami")) {
-//            correctAnswers += 1;
-//        } else {
-//            if (correctAnswers == 0) {
-//                correctAnswers += 0;
-//            } else
-//                correctAnswers -= 1;
-//        }
-//
-//    }
-//
-//    public void onCheckboxClicked(View v) {
-//
-//
-//        if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked()) {
-//            correctAnswers += 1;
-//        } else {
-//            if (Satya.isChecked()== false || Dandi.isChecked() == false || Swadeshi.isChecked() == false) {
-//                if(correctAnswers == 0)
-//                    correctAnswers += 0;
-//                 else
-//                   correctAnswers -= 1;
-//
-//            }
-////            if (correctAnswers == 0) {
-////                correctAnswers += 0;
-////            } else
-////                correctAnswers -= 1;
-//        }
-//    }
-//
-//    public void onCheckboxSeven(View v) {
-//
-//
-//
-//        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked()== false){
-//            answerSeven +=1;
-//        }else
-//            if (Jhansi.isChecked() || Mannu.isChecked() || IronLady.isChecked()){
-//                answerSeven += 0;
-//            }
-////        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked()== false) {
-////            correctAnswers += 1;
-////        } else {
-////            if (Jhansi.isChecked() || Mannu.isChecked() || IronLady.isChecked()) {
-////                if (correctAnswers == 0) {
-////                    correctAnswers += 0;
-////                } else
-////                    correctAnswers -= 1;
-////            }
-//
-////            if(correctAnswers == 0){
-////               correctAnswers += 0;
-////            }
-////            else
-////                correctAnswers -= 1;
-//
-//
-////        }
-// }
-//
-//
-//
+
 //    public void correctAnswer(View view){
 //        boolean checked = ((RadioButton)view).isChecked();
 ////        correctAnswers += 1;
@@ -385,11 +242,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void checkResults(View v){
-       // int finalAnswer = answerSeven + correctAnswers;
-        int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven + answerEight;
 
+        int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven + answerEight;
         Toast.makeText(getApplicationContext(),"Number of Correct Answers " +finalAnswer , Toast.LENGTH_LONG).show();
-       // Toast.makeText(getApplicationContext(),"Number of Correct Answers " +correctAnswers , Toast.LENGTH_LONG).show();
 
 
     }
