@@ -2,10 +2,10 @@ package com.example.android.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -47,6 +47,48 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+//        year.setOnFocusChangeListener(this);
+//        swami.setOnFocusChangeListener(this);
+//        year.setOnTouchListener(this);
+//        swami.setOnTouchListener(this);
+
+
+        swami.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // Nothing need to be done here, as this method is called before the text is changed
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                // This is called when text is being changed
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                // This is called when text has been changed
+                answerEight();
+            }
+        });
+
+        year.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                answerSix();
+            }
+        });
         return true;
     }
 
@@ -157,10 +199,10 @@ public class MainActivity extends AppCompatActivity {
             answerFive = 0;
     }
 
-    public void answerSix(View view){
+    public void answerSix(){
         boolean isAnswerCorrect = false;
         String indYear = year.getText().toString();
-        Log.e("DATA_SIX", indYear);
+//        Log.e("DATA_SIX", indYear);
         if (indYear.equals("1947")){
             isAnswerCorrect = true;
         }
@@ -186,10 +228,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void answerEight(View view){
+    public void answerEight(){
         boolean isAnswerCorrect = false;
         String name = swami.getText().toString();
-        Log.e("DATA_EGHT", name);
+//        Log.e("DATA_EGHT", name);
         if (name.equalsIgnoreCase("Swami Vivekanand")) {
             isAnswerCorrect = true;
         }
@@ -201,68 +243,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-//    public void correctAnswer(View view){
-//        boolean checked = ((RadioButton)view).isChecked();
-////        correctAnswers += 1;
-//        switch (view.getId()){
-//            case R.id.Mahatama_Gandhi:
-//                if(checked)
-//                    correctAnswers += 1;
-//                break;
-//            case R.id.bose:
-//                if(checked){
-//                    if(correctAnswers == 0){
-//                        correctAnswers += 0;
-//                    }
-//                    else
-//                        correctAnswers -= 1;
-//                }
-//                    break;
-//            case R.id.Nehru:
-//                if(checked)
-//                    correctAnswers += 1;
-//                break;
-//            case R.id.rajendra:
-//                if(checked){
-//                    if(correctAnswers == 0){
-//                        correctAnswers += 0;
-//                    }
-//                    else
-//                        correctAnswers -= 1;
-//                }
-//                    break;
-//            case R.id.kalam:
-//                if (checked)
-//                    correctAnswers += 1;
-//                break;
-//            case R.id.sarabhai:
-//                if(checked){
-//                    if(correctAnswers == 0){
-//                        correctAnswers += 0;
-//                    }
-//                    else
-//                        correctAnswers -= 1;
-//                }
-//                break;
-//            case R.id.patel:
-//                if (checked)
-//                    correctAnswers += 1;
-//                break;
-//            case R.id.lala:
-//                if(checked){
-//                    if(correctAnswers == 0){
-//                        correctAnswers += 0;
-//                    }
-//                    else
-//                        correctAnswers -= 1;
-//                }
-//                break;
-//
-//        }
-//    }
-
-
     public void checkResults(View v){
 
         int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven + answerEight;
@@ -270,4 +250,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+//    @Override
+//    public void onFocusChange(View view, boolean b) {
+//        switch(view.getId()){
+//            case R.id.independence_year:
+//                answerSix(view);
+//                break;
+//            case R.id.swami_vivekananda:
+//                answerEight(view);
+//                break;
+//        }
+//    }
+//
+//    @Override
+//    public boolean onTouch(View view, MotionEvent motionEvent) {
+//        boolean status = false;
+//
+//        switch(view.getId()){
+//            case R.id.independence_year:
+//                answerSix(view);
+//                status = true;
+//                break;
+//            case R.id.swami_vivekananda:
+//                answerEight(view);
+//                status=true;
+//                break;
+//        }
+//        return status;
+//    }
 }

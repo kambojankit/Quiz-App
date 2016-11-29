@@ -147,8 +147,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFEE58"
                 android:layout_marginBottom="10dp"
-                android:hint="@string/year"
-                android:onClick="answerSix">
+                android:hint="@string/year">
                <!--<requestFocus/> -->
         </EditText>
                 <!--android:onClick="answerSix" -->
@@ -193,7 +192,6 @@
                 android:id="@+id/swami_vivekananda"
                 android:background="#FF7043"
                 android:hint="@string/name_hint"
-                android:onClick="answerEight"
                 style="@style/HeightWidth"/>
         <Button
                 android:layout_width="wrap_content"
