@@ -2,8 +2,10 @@ package com.example.android.quizapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,12 +14,14 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    int answerSeven = 0,correctAnswers = 0;
+
+    byte correctAnswers = 0,answerOne = 0, answerTwo = 0, answerThree = 0, answerFour = 0,
+    answerFive = 0, answerSix = 0, answerSeven = 0, answerEight = 0;
     EditText year, swami;
     CheckBox Satya, Dandi, Swadeshi, Jhansi, Mannu, IronLady;
     RadioButton Gandhi,bose, Nehru, kalam, patel;
     String s = "1947";
-    //int inCorrectAnswers = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Mannu = (CheckBox) findViewById(R.id.mannu);
         IronLady = (CheckBox) findViewById(R.id.iron_lady);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (Gandhi.isChecked())
             isAnswerCorrect = true;
-        else
-            isAnswerCorrect = false;
 
         /**
             SEE:  Firstly the logic you added in else block is not required. you can use something like below
@@ -91,30 +94,26 @@ public class MainActivity extends AppCompatActivity {
          */
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerOne = 1;
+
         else
-           if(correctAnswers == 0)
-               correctAnswers += 0;
-           else
-            correctAnswers--;
+            if(answerOne == 0)
+                answerOne += 0;
+            else
+                answerOne = 0;
     }
 
     public void answerTwo(View view){
       boolean isAnswerCorrect = false;
 
-        if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked()){
+
+        if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked())
             isAnswerCorrect = true;
-        }
-        else
-            isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerTwo = 1;
         else
-        if(correctAnswers == 0)
-            correctAnswers += 0;
-        else
-            correctAnswers--;
+            answerTwo = 0;
     }
 
     public void answerThree(View view){
@@ -122,16 +121,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (Nehru.isChecked())
             isAnswerCorrect = true;
-        else
-            isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerThree = 1;
         else
-        if(correctAnswers == 0)
-            correctAnswers += 0;
-        else
-            correctAnswers--;
+            answerThree = 0;
+
     }
 
     public void answerFour(View view){
@@ -143,12 +138,9 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerFour = 1;
         else
-        if(correctAnswers == 0)
-            correctAnswers += 0;
-        else
-            correctAnswers--;
+            answerFour = 0;
     }
 
     public void answerFive(View view){
@@ -160,124 +152,56 @@ public class MainActivity extends AppCompatActivity {
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerFive = 1;
         else
-        if(correctAnswers == 0)
-            correctAnswers += 0;
-        else
-            correctAnswers--;
+            answerFive = 0;
     }
 
     public void answerSix(View view){
         boolean isAnswerCorrect = false;
-        year = (EditText) findViewById(R.id.independence_year);
-        String indYear = String.valueOf(year.getText());
+        String indYear = year.getText().toString();
+        Log.e("DATA_SIX", indYear);
         if (indYear.equals("1947")){
             isAnswerCorrect = true;
         }
         if (isAnswerCorrect)
-            correctAnswers++;
-    }
-
-    public void answerSeven(View view){
-        boolean isAnswerCorrect = false;
-        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked() == false){
-            isAnswerCorrect = true;
+            answerSix = 1;
+        else {
+            answerSix = 0;
         }
-        else
+   }
+
+    public void answerSeven(View view) {
+        boolean isAnswerCorrect = false;
+        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked() == false) {
+            isAnswerCorrect = true;
+        } else
             isAnswerCorrect = false;
 
         if (isAnswerCorrect)
-            correctAnswers++;
+            answerSeven = 1;
+            //answerSeven++;
         else
-        if(correctAnswers == 0)
-            correctAnswers += 0;
-        else
-            correctAnswers--;
+            answerSeven = 0;
     }
+
 
     public void answerEight(View view){
+        boolean isAnswerCorrect = false;
+        String name = swami.getText().toString();
+        Log.e("DATA_EGHT", name);
+        if (name.equalsIgnoreCase("Swami Vivekanand")) {
+            isAnswerCorrect = true;
+        }
 
+        if (isAnswerCorrect){
+            answerEight = 1;
+        }else {
+            answerEight = 0;
+        }
     }
 
-//    public void clickEditText(View view) {
-//
-//        //String independenceYear = String.valueOf(year.getText());
-//        // if (independenceYear.equals("1947")) {
-//        if (year.getText().toString().equals(s)) {
-//            correctAnswers += 1;
-//        } else {
-//            // if (independenceYear != "1947")
-//            //correctAnswers -= 1;
-//            if (correctAnswers == 0) {
-//                correctAnswers += 0;
-//            } else
-//                correctAnswers -= 1;
-//        }
-//
-//        if (swami.getText().toString().equals("swami")) {
-//            correctAnswers += 1;
-//        } else {
-//            if (correctAnswers == 0) {
-//                correctAnswers += 0;
-//            } else
-//                correctAnswers -= 1;
-//        }
-//
-//    }
-//
-//    public void onCheckboxClicked(View v) {
-//
-//
-//        if (Satya.isChecked() && Dandi.isChecked() && Swadeshi.isChecked()) {
-//            correctAnswers += 1;
-//        } else {
-//            if (Satya.isChecked()== false || Dandi.isChecked() == false || Swadeshi.isChecked() == false) {
-//                if(correctAnswers == 0)
-//                    correctAnswers += 0;
-//                 else
-//                   correctAnswers -= 1;
-//
-//            }
-////            if (correctAnswers == 0) {
-////                correctAnswers += 0;
-////            } else
-////                correctAnswers -= 1;
-//        }
-//    }
-//
-//    public void onCheckboxSeven(View v) {
-//
-//
-//
-//        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked()== false){
-//            answerSeven +=1;
-//        }else
-//            if (Jhansi.isChecked() || Mannu.isChecked() || IronLady.isChecked()){
-//                answerSeven += 0;
-//            }
-////        if (Jhansi.isChecked() && Mannu.isChecked() && IronLady.isChecked()== false) {
-////            correctAnswers += 1;
-////        } else {
-////            if (Jhansi.isChecked() || Mannu.isChecked() || IronLady.isChecked()) {
-////                if (correctAnswers == 0) {
-////                    correctAnswers += 0;
-////                } else
-////                    correctAnswers -= 1;
-////            }
-//
-////            if(correctAnswers == 0){
-////               correctAnswers += 0;
-////            }
-////            else
-////                correctAnswers -= 1;
-//
-//
-////        }
-// }
-//
-//
-//
+
 //    public void correctAnswer(View view){
 //        boolean checked = ((RadioButton)view).isChecked();
 ////        correctAnswers += 1;
@@ -340,10 +264,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void checkResults(View v){
-       // int finalAnswer = answerSeven + correctAnswers;
 
-        //Toast.makeText(getApplicationContext(),"Number of Correct Answers " +correctAnswers , Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(),"Number of Correct Answers " +correctAnswers , Toast.LENGTH_LONG).show();
+        int finalAnswer = answerOne + answerTwo + answerThree + answerFour + answerFive + answerSix + answerSeven + answerEight;
+        Toast.makeText(getApplicationContext(),"Number of Correct Answers " +finalAnswer , Toast.LENGTH_LONG).show();
 
 
     }
